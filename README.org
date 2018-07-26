@@ -1,0 +1,17 @@
+* GxG: Shared Task on Cross-Genre Gender Prediction in Italian
+
+http://sites.google.com/view/gxg2018/
+
+
+** Baseline
+
+|           |           |        |          |         |
+|           | precision | recall | f1-score | support |
+|-----------+-----------+--------+----------+---------|
+|           |           |        |          |         |
+| F         |      0.67 |   0.69 |     0.68 |    5328 |
+| M         |      0.70 |   0.68 |     0.69 |    5672 |
+|           |           |        |          |         |
+| avg/total |      0.68 |   0.68 |     0.68 |   11000 |
+
+Accuracy: 0.68
