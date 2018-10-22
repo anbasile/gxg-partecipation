@@ -29,6 +29,29 @@ ngram = Pipeline([('features', FeatureUnion([('wrd',
                                                     use_idf=True,
                                                     lowercase=True))])),
                   ('clf', LinearSVC())])
+words= Pipeline([('features', FeatureUnion([('wrd',
+                                              tfidf(binary=False,
+                                                    max_df=1.0,
+                                                    min_df=2,
+                                                    norm='l2',
+                                                    sublinear_tf=True,
+                                                    use_idf=True,
+                                                    lowercase=True))])),
+                  ('clf', LinearSVC())])
+
+
+chars= Pipeline([('features', FeatureUnion([('char',
+                                              tfidf(analyzer='char',
+                                                    ngram_range=(3, 6),
+                                                    binary=False,
+                                                    max_df=1.0,
+                                                    min_df=2,
+                                                    norm='l2',
+                                                    sublinear_tf=True,
+                                                    use_idf=True,
+                                                    lowercase=True))])),
+                  ('clf', LinearSVC())])
+
 
 simple = Pipeline([('features', vectorizer(lowercase=False,
                                            token_pattern=r'\b\w+\b',
